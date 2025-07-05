@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <form aria-label="Search for city weather" id="weather-form">
+            <div class="input-group">
+                <input type="text" id="name" autocomplete="off" placeholder="Enter city name" aria-label="City name">
+                <button type="submit" title="Search" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" id="current-location" title="Use current location" aria-label="Current location">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                </button>
+            </div>
+        </form>
+        <div id="error-message" role="alert" aria-live="assertive" class="hidden"></div>
+        <div id="loading" class="hidden" aria-live="polite">
+            <span class="spinner"></span>
+        </div>
+        <section class="result" aria-live="polite">
+            <figure class="name">
+                <figcaption id="city-name">London</figcaption>
+                <img id="country-flag" src="https://flagsapi.com/GB/shiny/32.png" alt="Country flag">
+            </figure>
+            <figure class="temperature">
+                <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@4x.png" alt="Weather icon">
+                <figcaption>
+                    <span id="temp">31</span>
+                    <sup>°</sup>
+                    <span id="feels-like" class="feels-like">Feels like 30°</span>
+                </figcaption>
+            </figure>
+            <p class="description" id="description">overcast clouds</p>
+            <div class="weather-grid">
+                <div class="weather-card clouds">
+                    <span>Clouds</span>
+                    <i class="fa-solid fa-cloud"></i>
+                    <span id="clouds">98</span>%
+                </div>
+                <div class="weather-card humidity">
+                    <span>Humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="humidity">98</span>%
+                </div>
+                <div class="weather-card pressure">
+                    <span>Pressure</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="pressure">1011</span> hPa
+                </div>
+                <div class="weather-card wind">
+                    <span>Wind</span>
+                    <i class="fa-solid fa-wind"></i>
+                    <span id="wind">--</span> m/s
+                </div>
+                <div class="weather-card visibility">
+                    <span>Visibility</span>
+                    <i class="fa-solid fa-eye"></i>
+                    <span id="visibility">--</span> km
+                </div>
+                <div class="weather-card uv">
+                    <span>UV Index</span>
+                    <i class="fa-solid fa-sun"></i>
+                    <span id="uv">--</span>
+                </div>
+            </div>
+            <div class="last-updated" id="last-updated">Last updated: --</div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
